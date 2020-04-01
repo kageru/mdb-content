@@ -44,11 +44,11 @@ That part might have been obvious, but we can apply it to everything that is nec
 ## The components
 So what does my blog need to do?
 Well, quite simple:
-- read markdown and convert it to HTML
-- generate an index of all the blog entries
-- include some basic CSS/JS in the output
-- update itself automatically when I publish something
-- be compatible with the content from my previous blog
+* read markdown and convert it to HTML
+* generate an index of all the blog entries
+* include some basic CSS/JS in the output
+* update itself automatically when I publish something
+* be compatible with the content from my previous blog
 
 That last point might be the worst, but it’s what I wanted/needed.
 
