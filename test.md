@@ -24,3 +24,4 @@ main = do
 And even more.
 
 Updating stuff is also possible.
+test
