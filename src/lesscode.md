@@ -38,7 +38,7 @@ But why not take that one step further?
 Don’t just not repeat yourself; don’t repeat someone else either.
 If someone has already written software that converts markdown to html,
   you don’t have to do it again.
-That part might have been obvious, but we can apply it to everything that is necessary for this little project
+That part might have been obvious, but we can apply it to almost everything that is necessary for this little project
   (within reason, otherwise we wouldn’t write any code at all).
 
 ## The components
@@ -85,8 +85,8 @@ Step 1 done.
 
 ### Index generation
 
-This problem was partially solved in the last step because we already had a list of all output paths sorted by edit date.
-All that is left now is to generate some static html from that. We thus make some changes:
+This problem was partially solved in the last step because A already had a list of all output paths sorted by edit date.
+All that is left now is to generate some static html from that. I thus make some changes:
 ```sh
 output() {
     echo "$1" >> index.html
@@ -97,21 +97,23 @@ create_entry() {
     path="$9"
     outpath="content/$(basename "$path" .md).html"
     pandoc "$path" -t html > "$outpath"
+    # and some html output
     output "<a href=\"$outpath\">$outpath</a>"
 }
 
 rm -f index.html # -f so it doesn’t fail if index.html doesn’t exist yet
 ls -ltu src/*.md | tail -n+1 | while read f; do create_entry $f; done
 ```
-That will give us a list of links to the blog entries with the filenames as titles.
-We can do better than that.
+That will give us a list of links to the blog entries with the filenames as titles,
+but we can do better than that.
 First, by extracting titles from the files.
 This is based on the assumption that I begin every blog post with an h1 heading, or a single `# Heading` in markdown.
 ```sh
 title="$(rg 'h1' "$outpath" | head -n1 | rg -o '(?<=>).*(?=<)' --pcre2)"
 ```
 Match the first line that contains an h1 and return whatever is inside `>` and `<` – the title.
-By then making the src directory part of a git repository
+
+By then making the `src` directory part of a git repository
   (which I wanted to do anyway because it’s a good way to track changes),
   we can get the creation time of each file.
 ```sh
@@ -137,7 +139,7 @@ create_entry {
     html_entry "$outpath" "created on $created" "$title"
 }
 
-rm index.html
+rm -f index.html
 output '<h1>Blog index</h1>'
 output '<table>'
 ls -ltu src/*.md | tail -n+1 | while read f; do create_entry $f; done
@@ -164,10 +166,10 @@ Next step.
 ### Automatic updates
 At first, I had the entire script run every few minutes via `cron`,
   but markup conversion isn’t that cheap,
-  so I only wanted to regenerate the files if there are actually any changes.
+  so I only wanted to regenerate the files if something actually changed.
 
 Since we’re already using git for the sources, we have everything we need.
-I simply have to check if there are changes upstream.
+I can simply check if there are changes upstream.
 
 ```sh
 has_updates() {
@@ -184,6 +186,7 @@ if has_updates; then
     # this merges origin/master into local master
     git pull
     # run the previous code
+    ...
 fi
 ```
 
