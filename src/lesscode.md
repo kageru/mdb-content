@@ -44,11 +44,12 @@ That part might have been obvious, but we can apply it to almost everything that
 ## The components
 So what does my blog need to do?
 Well, quite simple:
-* read markdown and convert it to HTML
-* generate an index of all the blog entries
-* include some basic CSS/JS in the output
-* update itself automatically when I publish something
-* be compatible with the content from my previous blog
+
+- read markdown and convert it to HTML
+- generate an index of all the blog entries
+- include some basic CSS/JS in the output
+- update itself automatically when I publish something
+- be compatible with the content from my previous blog
 
 That last point might be the worst, but it’s what I wanted/needed.
 
@@ -227,6 +228,7 @@ I think the comparison is fair, but we seem to have different priorities.
 He writes HTML; I write markdown.
 He uses rsync; I want everything in git and also use that to sync.
 He didn’t want dependencies; I… use pandoc. :^)
+
 Still very interesting to see his approach to this, so thanks for pointing that out.
 
 Now I’m considering adding RSS at some point. We’ll see.
