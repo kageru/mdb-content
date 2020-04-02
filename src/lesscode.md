@@ -205,10 +205,14 @@ Since I use nginx to add the header and footer to every page,
 After some slight adjustments to the old content pages, everything looks as intended.
 
 ## Summary
-That’s it. I now have a working static page generator for my blog in under 50 lines of shell code.
+I now have a working static page generator for my blog in under 50 lines of shell code.
 It does what I need and only that.
 The code is (relatively) simple and fully POSIX sh compliant.
 It’s not built to be super general or reusable, but that wasn’t the goal here.
+
+I am aware that I built this with relatively little regard to dependencies.
+Pandoc is huge, and the ripgrep call could be replaced with standard grep.
+I know that, but for now, I don’t care.
 
 If you want to take a look at the final result, the code is [on my gitea](https://git.kageru.moe/kageru/mdb).
 
