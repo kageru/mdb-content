@@ -219,3 +219,14 @@ If you want to take a look at the final result, the code is [on my gitea](https:
 I guess the only question now is: will this new blog give me the motivation to write more?
 Only time will tell.  
 I do have a few more ideas, and none of them are encoding-related. Sorry.
+
+
+
+**Edit:** It was brought to my attention that this is very similar to [Luke Smith’s lb](https://github.com/LukeSmithxyz/lb).
+I think the comparison is fair, but we seem to have different priorities.
+He writes HTML; I write markdown.
+He uses rsync; I want everything in git and also use that to sync.
+He didn’t want dependencies; I… use pandoc. :^)
+Still very interesting to see his approach to this, so thanks for pointing that out.
+
+Now I’m considering adding RSS at some point. We’ll see.
