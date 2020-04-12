@@ -21,7 +21,7 @@ I was personally interested in this because, being a Java/Kotlin developer,
 Still, I wanted to know how they compare to imperative code.
 There are some resources on this for Java 8’s Stream API,
     but Kotlin’s Sequences seem to just be accepted as
-    more convenient Streams[^convenience].
+    more convenient Streams, without much discussion about their performance.[^convenience]
 
 [^convenience]: If you’ve ever used them, you’ll know what I mean.
     Java’s Streams are built in a way that allows for easy parallelism,
@@ -34,7 +34,7 @@ It lets you write code as a sequence of instructions to be applied to all elemen
 Let’s use a simple example to demonstrate this.
 We want to take all numbers from 1 to 100,000,
    multiply each of them by 2,
-   and then add all of them.[^sum]
+   and then sum all of them.[^sum]
 
 [^sum]: You could also just compute the sum and take that \* 2, but we specifically want that intermediate step for the example.
 
@@ -56,7 +56,7 @@ return (1..100_000).asSequence()
     .sum()
 ```
 
-An iterator not a list, and it doesn’t support indexing,[^index]
+An iterator is not a list, and it doesn’t support indexing,[^index]
     because it doesn’t actually contain any data.
     It just knows how to get or compute it for you,
     but you don’t know how it does that.
@@ -65,7 +65,7 @@ An iterator not a list, and it doesn’t support indexing,[^index]
     meaning it will produce the numbers from 1 to 100,00 before it ends).  
 You can tell an iterator to produce or emit data if you want to use it
     (which is often called ‘consuming’
-    because if you read data from the pipeline,
+    because if you read something from the pipeline,
     it’s usually gone),
     or you can add a new step to it and hand the new pipeline to someone else,
     who can then consume it or add even more steps.  
@@ -78,12 +78,12 @@ You can tell an iterator to produce or emit data if you want to use it
 An important aspect to note is:
     adding an operation to the pipeline does nothing
     until someone actually starts reading from it,
-    and even then, only the elements that are consumed are computed.[^inf]  
-This makes it possible to operate on huge data sets while keeping memory usage low,
-     because only the currently active element has to be held in memory.
+    and even then, only the elements that are consumed are computed.  
+This makes it possible to operate on huge data sets[^inf] while keeping memory usage low,
+     because only the currently active element has to be held in memory.  
 
-[^inf]: This is what makes infinite iterators possible.
-    They can be very useful and are used a lot in functional languages,
+[^inf]: Huge or even infinite.
+    Infinite iterarors can be very useful and are used a lot in functional languages,
     but they’re not today’s topic.
 
 ## Cold, hard numbers
@@ -179,7 +179,8 @@ Kotlin.streamWrappedInSequence  avgt   25   3829.209 ±   33.569  ms/op
 Kotlin.withGenerator            avgt   25   8374.149 ±  880.647  ms/op
 ```
 
-(full JMH output)[https://ruru.moe/pSK13p8].  
+([full JMH output](https://ruru.moe/pSK13p8))
+
 Unsurprisingly, using Streams from Java and Kotlin is almost identical in terms of performance.
 The same is true for imperative loops,
     meaning Kotlin ranges introduce no overhead compared to incrementing for loops.
@@ -187,8 +188,8 @@ The same is true for imperative loops,
 More surprisingly, using Sequences is an order of magnitude slower.
 That was not at all according to my expectations, so I investigated.
 
-As it turns out, Java’s `LongStream` exists because Stream<Long> is *much* slower.
-The JVM has to use `Long` rather than `long` when the type is used for generics,
+As it turns out, Java’s `LongStream` exists because `Stream<Long>` is *much* slower.
+The JVM has to use `Long` (uppercase) rather than `long` when the type is used for generics,
     which involves an additional boxing step and the allocation for the `Long` object.[^primitives]  
 Still, we now know that Streams have about 25% overhead compared to the simple loop for this example,
     that generating sequences is a comparatively slow process,
@@ -202,15 +203,19 @@ Still, we now know that Streams have about 25% overhead compared to the simple l
     so a list of longs will always convert the `long` to `Long` before adding it.
 
 That last point seemed odd, so I attached a profiler to see where the CPU time is lost.  
+
 ![Flamegraph of `streamWrappedInSequence()`](https://i.kageru.moe/knT2Eg.png)
+
 We can see that the `LongStream` can produce a `PrimitiveIterator.OfLong` that is used as a source for the Sequence.
     The operation of boxing a primitive `long` into an object `Long`
     (that’s the `Long.valueOf()` step) takes almost as long as advancing the underlying iterator itself.  
 7.7% of the CPU time is spent in `Sequence.hasNext()`.
     The exact breakdown of that looks as follows:
+
 ![Checking if a Sequence has more elements](https://i.kageru.moe/k4NHhR.png)
+
 The Sequence introduces very little overhead here, as it just delegates to `hasNext()` of the underlying iterator.  
-Worth noting is that the iterator calls `accept` as part of `hasNext()`,
+Worth noting is that the iterator calls `accept()` as part of `hasNext()`,
     which will already advance the underlying iterator.
     The value returned by that will be stored temporarily until `nextLong()` is called.
 
@@ -250,7 +255,13 @@ The next snippet uses a simple wrapper class that guarantees that we have no pri
 I’ll use this opportunity to also compare parallel and sequential streams.
 
 The steps are simple:  
-Take a long -> create a LongWrapper from it, double the contained value (which creates a new LongWrapper), extract the value, compute the sum.  
+
+1. take a long 
+1. create a LongWrapper from it 
+1. double the contained value (which creates a new LongWrapper) 
+1. extract the value 
+1. calculate the sum
+
 That may sound overcomplicated,
      but it’s sadly close to the reality of enterprise code.
      Wrapper types are everywhere.
@@ -303,10 +314,10 @@ NonPrimitive.stream             avgt   25  44673.318 ± 1325.832  ms/op
 NonPrimitive.parallelStream     avgt   25  33856.919 ±  249.911  ms/op
 ```
 
-Full results are in the (JMH log from earlier)[https://ruru.moe/pSK13p8].
+Full results are in the [JMH log from earlier](https://ruru.moe/pSK13p8).
 
 The overhead of Java streams is much higher than that of Kotlin Sequences,
-and even a parallel Stream is slower than using a Sequence.
+and even a parallel Stream is slower than using a Sequence,
     even though Sequences only use a single thread,
     but both are miles behind the simple for loop.
     My first assumption was that the compiler optimized away the wrapper type and just added the longs,
@@ -326,12 +337,13 @@ This tells us that not only do Streams/Sequences have a very measurable overhead
 
 ## Conclusion
 
-Overall, I think that Kotlin’s Sequences are a good addition to the language.  
-    They fall behind Streams when working with primitives
+Overall, I think that Kotlin’s Sequences are a good addition to the language, despite their flaws.  
+They are significantly slower than Streams when working with primitives
     because the Java standard library has subtypes for many generic constructs to more efficiently handle primitive types,
     but in most real-world JVM applications (that being enterprise-level bloatware),
     primitives are the exception rather than the rule.
-    Still, Kotlin has some types that optimize for this, such as `LongIterator`,
+    Still, Kotlin already has some types that optimize for this,
+    such as `LongIterator`,
     but without a `LongSequence` to go with it,
     the boxing will still happen eventually,
     and all the performance gains are void.
@@ -344,27 +356,31 @@ Apart from the performance, Sequences are also a lot easier to understand and ev
     Implementing your own Sequence requires barely more than an implementation of the underlying iterator,
     as can be seen in [CoalescingSequence](https://git.kageru.moe/kageru/Sekwences/src/branch/master/src/main/kotlin/moe/kageru/sekwences/CoalescingSequence.kt)
     which I implemented last year to get a feeling for how all of this works.  
-Streams on the other hand are a lot more complex. They actually extend `Consumer<T>`,
-    so a `Stream<T>` is just a `void consume(T input)` that can be called repeatedly.
+Streams on the other hand are a lot more complex. They extend `Consumer<T>`,
+    so a `Stream<T>` is actually just a `void consume(T input)` that can be called repeatedly.
     That makes it a lot harder to grasp where data is coming from and how it is requested, at least to me.
 
 Simplicity is often underrated in software, but I consider it a huge plus for Sequences.
 
 I will continue to use them liberally,
     unless I find myself in a situation where I need to process a huge number of primitives.
-    And even then, I now know that Java’s Streams are a good choice.  
+    And even then, I now know that Java’s Streams are a good alternative,
+    as long as my code isn’t plain stupid and in dire need of the JIT optimizer.  
 25% might sound like a lot,
-    but it’s more than worth it if it means leaving code that is much easier to understand and modify for the next person.
-    Unless you’re actually in a very performance-critical part of your application,
+    but it’s more than worth it if it means leaving code that is much easier to understand and modify for the next person.  
+Unless you’re actually in a very performance-critical part of your application,
     but if you ever find yourself in that situation,
     you should switch to a different language.
 
-
-
-
-On that note: I was originally going to include Rust’s iterators here for comparison,
+Writing simple and correct code should always be more important than writing fast code.
+\
+\
+\
+\
+On the note of switching languages:
+    I was originally going to include Rust’s iterators here for comparison,
     but rustc optimized away all of my benchmarks with [constant time solutions](https://godbolt.org/z/iJaWVP).
-    It’s a fascinating topic,
+    That was a fascinating discovery for me,
     and I might write a separate blog post
     where I dissect some of the assembly that rustc/LLVM produced,
-    but I need to properly understand it myself first.
+    but I feel like I’ll need to learn a few more things about compilers first.
