@@ -1,0 +1,933 @@
+# JMH version: 1.23
+# VM version: JDK 15-ea, OpenJDK 64-Bit Server VM, 15-ea+17-717
+# VM invoker: /usr/lib/jvm/java-15-openjdk/bin/java
+# VM options: <none>
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: perf.Java.loop
+
+# Run progress: 0.00% complete, ETA 01:31:40
+# Fork: 1 of 5
+# Warmup Iteration   1: 456.332 ms/op
+# Warmup Iteration   2: 445.904 ms/op
+# Warmup Iteration   3: 447.161 ms/op
+# Warmup Iteration   4: 446.954 ms/op
+# Warmup Iteration   5: 445.977 ms/op
+Iteration   1: 446.109 ms/op
+Iteration   2: 447.066 ms/op
+Iteration   3: 445.489 ms/op
+Iteration   4: 447.256 ms/op
+Iteration   5: 447.188 ms/op
+
+# Run progress: 1.82% complete, ETA 01:32:24
+# Fork: 2 of 5
+# Warmup Iteration   1: 452.201 ms/op
+# Warmup Iteration   2: 445.484 ms/op
+# Warmup Iteration   3: 447.031 ms/op
+# Warmup Iteration   4: 445.762 ms/op
+# Warmup Iteration   5: 445.223 ms/op
+Iteration   1: 446.364 ms/op
+Iteration   2: 445.127 ms/op
+Iteration   3: 445.872 ms/op
+Iteration   4: 447.157 ms/op
+Iteration   5: 445.903 ms/op
+
+# Run progress: 3.64% complete, ETA 01:30:48
+# Fork: 3 of 5
+# Warmup Iteration   1: 450.744 ms/op
+# Warmup Iteration   2: 446.860 ms/op
+# Warmup Iteration   3: 447.187 ms/op
+# Warmup Iteration   4: 445.894 ms/op
+# Warmup Iteration   5: 446.363 ms/op
+Iteration   1: 446.135 ms/op
+Iteration   2: 445.913 ms/op
+Iteration   3: 445.983 ms/op
+Iteration   4: 445.214 ms/op
+Iteration   5: 445.505 ms/op
+
+# Run progress: 5.45% complete, ETA 01:29:07
+# Fork: 4 of 5
+# Warmup Iteration   1: 453.909 ms/op
+# Warmup Iteration   2: 445.268 ms/op
+# Warmup Iteration   3: 447.106 ms/op
+# Warmup Iteration   4: 452.267 ms/op
+# Warmup Iteration   5: 446.321 ms/op
+Iteration   1: 447.768 ms/op
+Iteration   2: 446.519 ms/op
+Iteration   3: 445.002 ms/op
+Iteration   4: 447.406 ms/op
+Iteration   5: 444.889 ms/op
+
+# Run progress: 7.27% complete, ETA 01:27:28
+# Fork: 5 of 5
+# Warmup Iteration   1: 453.557 ms/op
+# Warmup Iteration   2: 446.911 ms/op
+# Warmup Iteration   3: 447.795 ms/op
+# Warmup Iteration   4: 445.091 ms/op
+# Warmup Iteration   5: 447.698 ms/op
+Iteration   1: 444.943 ms/op
+Iteration   2: 445.156 ms/op
+Iteration   3: 447.101 ms/op
+Iteration   4: 445.289 ms/op
+Iteration   5: 445.011 ms/op
+
+
+Result "perf.Java.loop":
+  446.055 ±(99.9%) 0.677 ms/op [Average]
+  (min, avg, max) = (444.889, 446.055, 447.768), stdev = 0.904
+  CI (99.9%): [445.378, 446.732] (assumes normal distribution)
+
+
+# JMH version: 1.23
+# VM version: JDK 15-ea, OpenJDK 64-Bit Server VM, 15-ea+17-717
+# VM invoker: /usr/lib/jvm/java-15-openjdk/bin/java
+# VM options: <none>
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: perf.Java.stream
+
+# Run progress: 9.09% complete, ETA 01:25:45
+# Fork: 1 of 5
+# Warmup Iteration   1: 683.149 ms/op
+# Warmup Iteration   2: 591.776 ms/op
+# Warmup Iteration   3: 591.627 ms/op
+# Warmup Iteration   4: 598.434 ms/op
+# Warmup Iteration   5: 602.405 ms/op
+Iteration   1: 632.719 ms/op
+Iteration   2: 594.098 ms/op
+Iteration   3: 591.569 ms/op
+Iteration   4: 592.402 ms/op
+Iteration   5: 595.107 ms/op
+
+# Run progress: 10.91% complete, ETA 01:23:50
+# Fork: 2 of 5
+# Warmup Iteration   1: 678.576 ms/op
+# Warmup Iteration   2: 591.063 ms/op
+# Warmup Iteration   3: 594.322 ms/op
+# Warmup Iteration   4: 591.848 ms/op
+# Warmup Iteration   5: 594.417 ms/op
+Iteration   1: 595.271 ms/op
+Iteration   2: 592.028 ms/op
+Iteration   3: 642.472 ms/op
+Iteration   4: 593.947 ms/op
+Iteration   5: 592.536 ms/op
+
+# Run progress: 12.73% complete, ETA 01:21:58
+# Fork: 3 of 5
+# Warmup Iteration   1: 678.283 ms/op
+# Warmup Iteration   2: 594.497 ms/op
+# Warmup Iteration   3: 592.839 ms/op
+# Warmup Iteration   4: 592.898 ms/op
+# Warmup Iteration   5: 594.148 ms/op
+Iteration   1: 629.247 ms/op
+Iteration   2: 592.774 ms/op
+Iteration   3: 593.806 ms/op
+Iteration   4: 593.348 ms/op
+Iteration   5: 593.438 ms/op
+
+# Run progress: 14.55% complete, ETA 01:20:08
+# Fork: 4 of 5
+# Warmup Iteration   1: 679.167 ms/op
+# Warmup Iteration   2: 591.866 ms/op
+# Warmup Iteration   3: 592.856 ms/op
+# Warmup Iteration   4: 592.900 ms/op
+# Warmup Iteration   5: 591.494 ms/op
+Iteration   1: 635.757 ms/op
+Iteration   2: 593.654 ms/op
+Iteration   3: 591.762 ms/op
+Iteration   4: 593.685 ms/op
+Iteration   5: 592.605 ms/op
+
+# Run progress: 16.36% complete, ETA 01:18:20
+# Fork: 5 of 5
+# Warmup Iteration   1: 679.848 ms/op
+# Warmup Iteration   2: 594.060 ms/op
+# Warmup Iteration   3: 592.618 ms/op
+# Warmup Iteration   4: 596.782 ms/op
+# Warmup Iteration   5: 593.338 ms/op
+Iteration   1: 630.190 ms/op
+Iteration   2: 594.034 ms/op
+Iteration   3: 594.066 ms/op
+Iteration   4: 592.662 ms/op
+Iteration   5: 592.430 ms/op
+
+
+Result "perf.Java.stream":
+  601.424 ±(99.9%) 12.606 ms/op [Average]
+  (min, avg, max) = (591.569, 601.424, 642.472), stdev = 16.829
+  CI (99.9%): [588.818, 614.031] (assumes normal distribution)
+
+
+# JMH version: 1.23
+# VM version: JDK 15-ea, OpenJDK 64-Bit Server VM, 15-ea+17-717
+# VM invoker: /usr/lib/jvm/java-15-openjdk/bin/java
+# VM options: <none>
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: perf.Kotlin.loop
+
+# Run progress: 18.18% complete, ETA 01:16:33
+# Fork: 1 of 5
+# Warmup Iteration   1: 452.772 ms/op
+# Warmup Iteration   2: 445.813 ms/op
+# Warmup Iteration   3: 445.203 ms/op
+# Warmup Iteration   4: 447.020 ms/op
+# Warmup Iteration   5: 445.761 ms/op
+Iteration   1: 445.277 ms/op
+Iteration   2: 447.734 ms/op
+Iteration   3: 445.433 ms/op
+Iteration   4: 445.653 ms/op
+Iteration   5: 446.958 ms/op
+
+# Run progress: 20.00% complete, ETA 01:14:54
+# Fork: 2 of 5
+# Warmup Iteration   1: 450.903 ms/op
+# Warmup Iteration   2: 445.990 ms/op
+# Warmup Iteration   3: 447.923 ms/op
+# Warmup Iteration   4: 445.835 ms/op
+# Warmup Iteration   5: 445.211 ms/op
+Iteration   1: 447.195 ms/op
+Iteration   2: 449.569 ms/op
+Iteration   3: 444.934 ms/op
+Iteration   4: 446.823 ms/op
+Iteration   5: 445.366 ms/op
+
+# Run progress: 21.82% complete, ETA 01:13:15
+# Fork: 3 of 5
+# Warmup Iteration   1: 456.334 ms/op
+# Warmup Iteration   2: 446.712 ms/op
+# Warmup Iteration   3: 445.541 ms/op
+# Warmup Iteration   4: 446.043 ms/op
+# Warmup Iteration   5: 446.722 ms/op
+Iteration   1: 445.405 ms/op
+Iteration   2: 447.530 ms/op
+Iteration   3: 450.772 ms/op
+Iteration   4: 445.377 ms/op
+Iteration   5: 447.160 ms/op
+
+# Run progress: 23.64% complete, ETA 01:11:34
+# Fork: 4 of 5
+# Warmup Iteration   1: 452.581 ms/op
+# Warmup Iteration   2: 445.681 ms/op
+# Warmup Iteration   3: 447.341 ms/op
+# Warmup Iteration   4: 446.772 ms/op
+# Warmup Iteration   5: 447.728 ms/op
+Iteration   1: 447.228 ms/op
+Iteration   2: 446.791 ms/op
+Iteration   3: 445.374 ms/op
+Iteration   4: 447.020 ms/op
+Iteration   5: 445.255 ms/op
+
+# Run progress: 25.45% complete, ETA 01:09:54
+# Fork: 5 of 5
+# Warmup Iteration   1: 450.730 ms/op
+# Warmup Iteration   2: 447.652 ms/op
+# Warmup Iteration   3: 445.747 ms/op
+# Warmup Iteration   4: 444.973 ms/op
+# Warmup Iteration   5: 446.593 ms/op
+Iteration   1: 445.315 ms/op
+Iteration   2: 445.712 ms/op
+Iteration   3: 449.632 ms/op
+Iteration   4: 446.242 ms/op
+Iteration   5: 445.253 ms/op
+
+
+Result "perf.Kotlin.loop":
+  446.600 ±(99.9%) 1.164 ms/op [Average]
+  (min, avg, max) = (444.934, 446.600, 450.772), stdev = 1.554
+  CI (99.9%): [445.436, 447.764] (assumes normal distribution)
+
+
+# JMH version: 1.23
+# VM version: JDK 15-ea, OpenJDK 64-Bit Server VM, 15-ea+17-717
+# VM invoker: /usr/lib/jvm/java-15-openjdk/bin/java
+# VM options: <none>
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: perf.Kotlin.sequence
+
+# Run progress: 27.27% complete, ETA 01:08:14
+# Fork: 1 of 5
+# Warmup Iteration   1: 2875.137 ms/op
+# Warmup Iteration   2: 2714.992 ms/op
+# Warmup Iteration   3: 2717.500 ms/op
+# Warmup Iteration   4: 2722.842 ms/op
+# Warmup Iteration   5: 2726.368 ms/op
+Iteration   1: 2718.843 ms/op
+Iteration   2: 2730.963 ms/op
+Iteration   3: 2725.803 ms/op
+Iteration   4: 2735.491 ms/op
+Iteration   5: 2720.835 ms/op
+
+# Run progress: 29.09% complete, ETA 01:06:49
+# Fork: 2 of 5
+# Warmup Iteration   1: 2872.714 ms/op
+# Warmup Iteration   2: 2737.939 ms/op
+# Warmup Iteration   3: 2723.591 ms/op
+# Warmup Iteration   4: 2739.880 ms/op
+# Warmup Iteration   5: 2735.399 ms/op
+Iteration   1: 2725.004 ms/op
+Iteration   2: 2739.529 ms/op
+Iteration   3: 2735.921 ms/op
+Iteration   4: 2737.889 ms/op
+Iteration   5: 2745.381 ms/op
+
+# Run progress: 30.91% complete, ETA 01:05:23
+# Fork: 3 of 5
+# Warmup Iteration   1: 2863.006 ms/op
+# Warmup Iteration   2: 2726.449 ms/op
+# Warmup Iteration   3: 2733.619 ms/op
+# Warmup Iteration   4: 2725.596 ms/op
+# Warmup Iteration   5: 2743.223 ms/op
+Iteration   1: 2730.597 ms/op
+Iteration   2: 2742.830 ms/op
+Iteration   3: 2737.714 ms/op
+Iteration   4: 2727.641 ms/op
+Iteration   5: 2729.501 ms/op
+
+# Run progress: 32.73% complete, ETA 01:03:54
+# Fork: 4 of 5
+# Warmup Iteration   1: 2874.924 ms/op
+# Warmup Iteration   2: 2727.463 ms/op
+# Warmup Iteration   3: 2792.965 ms/op
+# Warmup Iteration   4: 2722.637 ms/op
+# Warmup Iteration   5: 2724.197 ms/op
+Iteration   1: 2736.731 ms/op
+Iteration   2: 2726.640 ms/op
+Iteration   3: 2748.462 ms/op
+Iteration   4: 2747.123 ms/op
+Iteration   5: 2741.907 ms/op
+
+# Run progress: 34.55% complete, ETA 01:02:23
+# Fork: 5 of 5
+# Warmup Iteration   1: 2852.575 ms/op
+# Warmup Iteration   2: 2727.111 ms/op
+# Warmup Iteration   3: 2734.597 ms/op
+# Warmup Iteration   4: 2731.829 ms/op
+# Warmup Iteration   5: 2720.765 ms/op
+Iteration   1: 2724.821 ms/op
+Iteration   2: 2733.517 ms/op
+Iteration   3: 2726.031 ms/op
+Iteration   4: 2714.774 ms/op
+Iteration   5: 2731.156 ms/op
+
+
+Result "perf.Kotlin.sequence":
+  2732.604 ±(99.9%) 6.644 ms/op [Average]
+  (min, avg, max) = (2714.774, 2732.604, 2748.462), stdev = 8.870
+  CI (99.9%): [2725.960, 2739.248] (assumes normal distribution)
+
+
+# JMH version: 1.23
+# VM version: JDK 15-ea, OpenJDK 64-Bit Server VM, 15-ea+17-717
+# VM invoker: /usr/lib/jvm/java-15-openjdk/bin/java
+# VM options: <none>
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: perf.Kotlin.stream
+
+# Run progress: 36.36% complete, ETA 01:00:49
+# Fork: 1 of 5
+# Warmup Iteration   1: 678.345 ms/op
+# Warmup Iteration   2: 591.611 ms/op
+# Warmup Iteration   3: 593.355 ms/op
+# Warmup Iteration   4: 593.125 ms/op
+# Warmup Iteration   5: 592.035 ms/op
+Iteration   1: 594.764 ms/op
+Iteration   2: 595.813 ms/op
+Iteration   3: 592.359 ms/op
+Iteration   4: 593.853 ms/op
+Iteration   5: 593.184 ms/op
+
+# Run progress: 38.18% complete, ETA 00:59:00
+# Fork: 2 of 5
+# Warmup Iteration   1: 680.533 ms/op
+# Warmup Iteration   2: 644.939 ms/op
+# Warmup Iteration   3: 592.135 ms/op
+# Warmup Iteration   4: 592.386 ms/op
+# Warmup Iteration   5: 593.396 ms/op
+Iteration   1: 592.626 ms/op
+Iteration   2: 593.254 ms/op
+Iteration   3: 594.582 ms/op
+Iteration   4: 591.622 ms/op
+Iteration   5: 592.595 ms/op
+
+# Run progress: 40.00% complete, ETA 00:57:11
+# Fork: 3 of 5
+# Warmup Iteration   1: 680.298 ms/op
+# Warmup Iteration   2: 591.609 ms/op
+# Warmup Iteration   3: 592.565 ms/op
+# Warmup Iteration   4: 591.873 ms/op
+# Warmup Iteration   5: 591.836 ms/op
+Iteration   1: 593.007 ms/op
+Iteration   2: 592.916 ms/op
+Iteration   3: 591.434 ms/op
+Iteration   4: 594.996 ms/op
+Iteration   5: 592.853 ms/op
+
+# Run progress: 41.82% complete, ETA 00:55:23
+# Fork: 4 of 5
+# Warmup Iteration   1: 678.935 ms/op
+# Warmup Iteration   2: 595.014 ms/op
+# Warmup Iteration   3: 593.754 ms/op
+# Warmup Iteration   4: 592.117 ms/op
+# Warmup Iteration   5: 593.827 ms/op
+Iteration   1: 591.940 ms/op
+Iteration   2: 591.284 ms/op
+Iteration   3: 593.308 ms/op
+Iteration   4: 597.758 ms/op
+Iteration   5: 591.519 ms/op
+
+# Run progress: 43.64% complete, ETA 00:53:36
+# Fork: 5 of 5
+# Warmup Iteration   1: 681.321 ms/op
+# Warmup Iteration   2: 635.465 ms/op
+# Warmup Iteration   3: 591.332 ms/op
+# Warmup Iteration   4: 593.023 ms/op
+# Warmup Iteration   5: 590.999 ms/op
+Iteration   1: 590.586 ms/op
+Iteration   2: 597.205 ms/op
+Iteration   3: 591.966 ms/op
+Iteration   4: 592.190 ms/op
+Iteration   5: 596.203 ms/op
+
+
+Result "perf.Kotlin.stream":
+  593.353 ±(99.9%) 1.408 ms/op [Average]
+  (min, avg, max) = (590.586, 593.353, 597.758), stdev = 1.880
+  CI (99.9%): [591.945, 594.761] (assumes normal distribution)
+
+
+# JMH version: 1.23
+# VM version: JDK 15-ea, OpenJDK 64-Bit Server VM, 15-ea+17-717
+# VM invoker: /usr/lib/jvm/java-15-openjdk/bin/java
+# VM options: <none>
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: perf.Kotlin.streamWrappedInSequence
+
+# Run progress: 45.45% complete, ETA 00:51:49
+# Fork: 1 of 5
+# Warmup Iteration   1: 3989.143 ms/op
+# Warmup Iteration   2: 3808.328 ms/op
+# Warmup Iteration   3: 3851.896 ms/op
+# Warmup Iteration   4: 3821.087 ms/op
+# Warmup Iteration   5: 3842.988 ms/op
+Iteration   1: 3838.952 ms/op
+Iteration   2: 3828.666 ms/op
+Iteration   3: 3829.225 ms/op
+Iteration   4: 3804.143 ms/op
+Iteration   5: 3803.303 ms/op
+
+# Run progress: 47.27% complete, ETA 00:50:19
+# Fork: 2 of 5
+# Warmup Iteration   1: 3965.935 ms/op
+# Warmup Iteration   2: 3830.953 ms/op
+# Warmup Iteration   3: 3831.254 ms/op
+# Warmup Iteration   4: 3786.462 ms/op
+# Warmup Iteration   5: 3810.373 ms/op
+Iteration   1: 3820.851 ms/op
+Iteration   2: 3850.427 ms/op
+Iteration   3: 3874.084 ms/op
+Iteration   4: 3810.283 ms/op
+Iteration   5: 3794.962 ms/op
+
+# Run progress: 49.09% complete, ETA 00:48:46
+# Fork: 3 of 5
+# Warmup Iteration   1: 3971.302 ms/op
+# Warmup Iteration   2: 3805.030 ms/op
+# Warmup Iteration   3: 3827.273 ms/op
+# Warmup Iteration   4: 3797.691 ms/op
+# Warmup Iteration   5: 3828.704 ms/op
+Iteration   1: 3835.989 ms/op
+Iteration   2: 3807.760 ms/op
+Iteration   3: 4022.427 ms/op
+Iteration   4: 3809.359 ms/op
+Iteration   5: 3834.482 ms/op
+
+# Run progress: 50.91% complete, ETA 00:47:12
+# Fork: 4 of 5
+# Warmup Iteration   1: 4038.999 ms/op
+# Warmup Iteration   2: 3790.741 ms/op
+# Warmup Iteration   3: 3816.597 ms/op
+# Warmup Iteration   4: 3804.865 ms/op
+# Warmup Iteration   5: 3835.732 ms/op
+Iteration   1: 3804.229 ms/op
+Iteration   2: 3854.098 ms/op
+Iteration   3: 3822.642 ms/op
+Iteration   4: 3817.002 ms/op
+Iteration   5: 3804.801 ms/op
+
+# Run progress: 52.73% complete, ETA 00:45:37
+# Fork: 5 of 5
+# Warmup Iteration   1: 3975.357 ms/op
+# Warmup Iteration   2: 3848.500 ms/op
+# Warmup Iteration   3: 3794.490 ms/op
+# Warmup Iteration   4: 3823.770 ms/op
+# Warmup Iteration   5: 3810.056 ms/op
+Iteration   1: 3831.363 ms/op
+Iteration   2: 3819.838 ms/op
+Iteration   3: 3787.684 ms/op
+Iteration   4: 3808.174 ms/op
+Iteration   5: 3815.488 ms/op
+
+
+Result "perf.Kotlin.streamWrappedInSequence":
+  3829.209 ±(99.9%) 33.569 ms/op [Average]
+  (min, avg, max) = (3787.684, 3829.209, 4022.427), stdev = 44.814
+  CI (99.9%): [3795.640, 3862.779] (assumes normal distribution)
+
+
+# JMH version: 1.23
+# VM version: JDK 15-ea, OpenJDK 64-Bit Server VM, 15-ea+17-717
+# VM invoker: /usr/lib/jvm/java-15-openjdk/bin/java
+# VM options: <none>
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: perf.Kotlin.withGenerator
+
+# Run progress: 54.55% complete, ETA 00:44:00
+# Fork: 1 of 5
+# Warmup Iteration   1: 10059.659 ms/op
+# Warmup Iteration   2: 8877.213 ms/op
+# Warmup Iteration   3: 8124.623 ms/op
+# Warmup Iteration   4: 8131.638 ms/op
+# Warmup Iteration   5: 8148.939 ms/op
+Iteration   1: 8148.879 ms/op
+Iteration   2: 8055.587 ms/op
+Iteration   3: 8173.149 ms/op
+Iteration   4: 8169.328 ms/op
+Iteration   5: 8132.040 ms/op
+
+# Run progress: 56.36% complete, ETA 00:42:55
+# Fork: 2 of 5
+# Warmup Iteration   1: 10101.875 ms/op
+# Warmup Iteration   2: 8876.112 ms/op
+# Warmup Iteration   3: 8091.701 ms/op
+# Warmup Iteration   4: 8130.830 ms/op
+# Warmup Iteration   5: 8162.659 ms/op
+Iteration   1: 8112.434 ms/op
+Iteration   2: 8077.144 ms/op
+Iteration   3: 8134.760 ms/op
+Iteration   4: 8178.659 ms/op
+Iteration   5: 8122.861 ms/op
+
+# Run progress: 58.18% complete, ETA 00:41:44
+# Fork: 3 of 5
+# Warmup Iteration   1: 10088.192 ms/op
+# Warmup Iteration   2: 8938.462 ms/op
+# Warmup Iteration   3: 8169.118 ms/op
+# Warmup Iteration   4: 8110.177 ms/op
+# Warmup Iteration   5: 8120.017 ms/op
+Iteration   1: 8130.142 ms/op
+Iteration   2: 8146.593 ms/op
+Iteration   3: 8161.427 ms/op
+Iteration   4: 8180.565 ms/op
+Iteration   5: 8153.313 ms/op
+
+# Run progress: 60.00% complete, ETA 00:40:28
+# Fork: 4 of 5
+# Warmup Iteration   1: 12624.377 ms/op
+# Warmup Iteration   2: 8872.746 ms/op
+# Warmup Iteration   3: 8114.339 ms/op
+# Warmup Iteration   4: 8144.090 ms/op
+# Warmup Iteration   5: 8054.094 ms/op
+Iteration   1: 8134.096 ms/op
+Iteration   2: 8154.380 ms/op
+Iteration   3: 8130.686 ms/op
+Iteration   4: 14015.371 ms/op
+Iteration   5: 8114.715 ms/op
+
+# Run progress: 61.82% complete, ETA 00:39:07
+# Fork: 5 of 5
+# Warmup Iteration   1: 10102.610 ms/op
+# Warmup Iteration   2: 8880.406 ms/op
+# Warmup Iteration   3: 8116.952 ms/op
+# Warmup Iteration   4: 8223.242 ms/op
+# Warmup Iteration   5: 8149.098 ms/op
+Iteration   1: 8152.230 ms/op
+Iteration   2: 8110.804 ms/op
+Iteration   3: 8136.879 ms/op
+Iteration   4: 8178.455 ms/op
+Iteration   5: 8149.239 ms/op
+
+
+Result "perf.Kotlin.withGenerator":
+  8374.149 ±(99.9%) 880.647 ms/op [Average]
+  (min, avg, max) = (8055.587, 8374.149, 14015.371), stdev = 1175.639
+  CI (99.9%): [7493.502, 9254.797] (assumes normal distribution)
+
+
+# JMH version: 1.23
+# VM version: JDK 15-ea, OpenJDK 64-Bit Server VM, 15-ea+17-717
+# VM invoker: /usr/lib/jvm/java-15-openjdk/bin/java
+# VM options: <none>
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: perf.NonPrimitive.loop
+
+# Run progress: 63.64% complete, ETA 00:37:42
+# Fork: 1 of 5
+# Warmup Iteration   1: 454.126 ms/op
+# Warmup Iteration   2: 446.612 ms/op
+# Warmup Iteration   3: 445.577 ms/op
+# Warmup Iteration   4: 447.197 ms/op
+# Warmup Iteration   5: 445.174 ms/op
+Iteration   1: 444.831 ms/op
+Iteration   2: 446.933 ms/op
+Iteration   3: 445.256 ms/op
+Iteration   4: 444.518 ms/op
+Iteration   5: 447.351 ms/op
+
+# Run progress: 65.45% complete, ETA 00:35:44
+# Fork: 2 of 5
+# Warmup Iteration   1: 453.077 ms/op
+# Warmup Iteration   2: 445.972 ms/op
+# Warmup Iteration   3: 448.129 ms/op
+# Warmup Iteration   4: 446.268 ms/op
+# Warmup Iteration   5: 444.718 ms/op
+Iteration   1: 447.130 ms/op
+Iteration   2: 445.217 ms/op
+Iteration   3: 445.393 ms/op
+Iteration   4: 447.177 ms/op
+Iteration   5: 445.732 ms/op
+
+# Run progress: 67.27% complete, ETA 00:33:46
+# Fork: 3 of 5
+# Warmup Iteration   1: 451.974 ms/op
+# Warmup Iteration   2: 446.601 ms/op
+# Warmup Iteration   3: 445.653 ms/op
+# Warmup Iteration   4: 448.023 ms/op
+# Warmup Iteration   5: 458.473 ms/op
+Iteration   1: 447.401 ms/op
+Iteration   2: 445.530 ms/op
+Iteration   3: 446.670 ms/op
+Iteration   4: 444.751 ms/op
+Iteration   5: 446.407 ms/op
+
+# Run progress: 69.09% complete, ETA 00:31:49
+# Fork: 4 of 5
+# Warmup Iteration   1: 452.980 ms/op
+# Warmup Iteration   2: 444.762 ms/op
+# Warmup Iteration   3: 447.634 ms/op
+# Warmup Iteration   4: 446.151 ms/op
+# Warmup Iteration   5: 444.367 ms/op
+Iteration   1: 446.652 ms/op
+Iteration   2: 445.799 ms/op
+Iteration   3: 445.204 ms/op
+Iteration   4: 446.163 ms/op
+Iteration   5: 446.287 ms/op
+
+# Run progress: 70.91% complete, ETA 00:29:53
+# Fork: 5 of 5
+# Warmup Iteration   1: 451.592 ms/op
+# Warmup Iteration   2: 448.889 ms/op
+# Warmup Iteration   3: 445.963 ms/op
+# Warmup Iteration   4: 445.615 ms/op
+# Warmup Iteration   5: 447.028 ms/op
+Iteration   1: 445.457 ms/op
+Iteration   2: 445.110 ms/op
+Iteration   3: 446.664 ms/op
+Iteration   4: 445.987 ms/op
+Iteration   5: 446.179 ms/op
+
+
+Result "perf.NonPrimitive.loop":
+  445.992 ±(99.9%) 0.642 ms/op [Average]
+  (min, avg, max) = (444.518, 445.992, 447.401), stdev = 0.858
+  CI (99.9%): [445.349, 446.634] (assumes normal distribution)
+
+
+# JMH version: 1.23
+# VM version: JDK 15-ea, OpenJDK 64-Bit Server VM, 15-ea+17-717
+# VM invoker: /usr/lib/jvm/java-15-openjdk/bin/java
+# VM options: <none>
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: perf.NonPrimitive.parallelStream
+
+# Run progress: 72.73% complete, ETA 00:27:57
+# Fork: 1 of 5
+# Warmup Iteration   1: 31838.855 ms/op
+# Warmup Iteration   2: 34561.656 ms/op
+# Warmup Iteration   3: 35669.703 ms/op
+# Warmup Iteration   4: 34349.624 ms/op
+# Warmup Iteration   5: 33726.583 ms/op
+Iteration   1: 33877.354 ms/op
+Iteration   2: 33822.699 ms/op
+Iteration   3: 33778.386 ms/op
+Iteration   4: 34008.675 ms/op
+Iteration   5: 33856.945 ms/op
+
+# Run progress: 74.55% complete, ETA 00:27:23
+# Fork: 2 of 5
+# Warmup Iteration   1: 32494.459 ms/op
+# Warmup Iteration   2: 36153.069 ms/op
+# Warmup Iteration   3: 36796.548 ms/op
+# Warmup Iteration   4: 35025.518 ms/op
+# Warmup Iteration   5: 33258.558 ms/op
+Iteration   1: 33554.978 ms/op
+Iteration   2: 33424.136 ms/op
+Iteration   3: 33627.128 ms/op
+Iteration   4: 34313.959 ms/op
+Iteration   5: 34112.359 ms/op
+
+# Run progress: 76.36% complete, ETA 00:26:36
+# Fork: 3 of 5
+# Warmup Iteration   1: 31567.609 ms/op
+# Warmup Iteration   2: 34712.718 ms/op
+# Warmup Iteration   3: 33958.542 ms/op
+# Warmup Iteration   4: 34035.515 ms/op
+# Warmup Iteration   5: 34438.473 ms/op
+Iteration   1: 33670.314 ms/op
+Iteration   2: 33864.096 ms/op
+Iteration   3: 34302.070 ms/op
+Iteration   4: 33971.974 ms/op
+Iteration   5: 33560.701 ms/op
+
+# Run progress: 78.18% complete, ETA 00:25:33
+# Fork: 4 of 5
+# Warmup Iteration   1: 31742.222 ms/op
+# Warmup Iteration   2: 34731.781 ms/op
+# Warmup Iteration   3: 33450.090 ms/op
+# Warmup Iteration   4: 33130.877 ms/op
+# Warmup Iteration   5: 33546.489 ms/op
+Iteration   1: 33366.136 ms/op
+Iteration   2: 33895.648 ms/op
+Iteration   3: 34376.907 ms/op
+Iteration   4: 33857.023 ms/op
+Iteration   5: 33111.330 ms/op
+
+# Run progress: 80.00% complete, ETA 00:24:17
+# Fork: 5 of 5
+# Warmup Iteration   1: 31518.688 ms/op
+# Warmup Iteration   2: 34623.682 ms/op
+# Warmup Iteration   3: 34725.832 ms/op
+# Warmup Iteration   4: 33545.596 ms/op
+# Warmup Iteration   5: 34196.732 ms/op
+Iteration   1: 34093.607 ms/op
+Iteration   2: 33647.008 ms/op
+Iteration   3: 34429.111 ms/op
+Iteration   4: 33643.974 ms/op
+Iteration   5: 34256.452 ms/op
+
+
+Result "perf.NonPrimitive.parallelStream":
+  33856.919 ±(99.9%) 249.911 ms/op [Average]
+  (min, avg, max) = (33111.330, 33856.919, 34429.111), stdev = 333.625
+  CI (99.9%): [33607.007, 34106.830] (assumes normal distribution)
+
+
+# JMH version: 1.23
+# VM version: JDK 15-ea, OpenJDK 64-Bit Server VM, 15-ea+17-717
+# VM invoker: /usr/lib/jvm/java-15-openjdk/bin/java
+# VM options: <none>
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: perf.NonPrimitive.sequence
+
+# Run progress: 81.82% complete, ETA 00:22:51
+# Fork: 1 of 5
+# Warmup Iteration   1: 29376.336 ms/op
+# Warmup Iteration   2: 27208.353 ms/op
+# Warmup Iteration   3: 27221.251 ms/op
+# Warmup Iteration   4: 27217.165 ms/op
+# Warmup Iteration   5: 27146.583 ms/op
+Iteration   1: 27302.438 ms/op
+Iteration   2: 27158.834 ms/op
+Iteration   3: 29219.908 ms/op
+Iteration   4: 27236.755 ms/op
+Iteration   5: 27213.294 ms/op
+
+# Run progress: 83.64% complete, ETA 00:21:01
+# Fork: 2 of 5
+# Warmup Iteration   1: 27179.841 ms/op
+# Warmup Iteration   2: 27104.263 ms/op
+# Warmup Iteration   3: 27025.071 ms/op
+# Warmup Iteration   4: 27029.083 ms/op
+# Warmup Iteration   5: 27048.692 ms/op
+Iteration   1: 27151.655 ms/op
+Iteration   2: 27469.413 ms/op
+Iteration   3: 26944.107 ms/op
+Iteration   4: 27028.756 ms/op
+Iteration   5: 27077.869 ms/op
+
+# Run progress: 85.45% complete, ETA 00:19:03
+# Fork: 3 of 5
+# Warmup Iteration   1: 27227.611 ms/op
+# Warmup Iteration   2: 27068.450 ms/op
+# Warmup Iteration   3: 27032.028 ms/op
+# Warmup Iteration   4: 28617.949 ms/op
+# Warmup Iteration   5: 26948.167 ms/op
+Iteration   1: 27025.160 ms/op
+Iteration   2: 27070.999 ms/op
+Iteration   3: 27105.065 ms/op
+Iteration   4: 27025.640 ms/op
+Iteration   5: 26987.588 ms/op
+
+# Run progress: 87.27% complete, ETA 00:16:59
+# Fork: 4 of 5
+# Warmup Iteration   1: 27227.761 ms/op
+# Warmup Iteration   2: 27007.131 ms/op
+# Warmup Iteration   3: 27072.111 ms/op
+# Warmup Iteration   4: 27429.696 ms/op
+# Warmup Iteration   5: 27052.873 ms/op
+Iteration   1: 27165.902 ms/op
+Iteration   2: 27522.829 ms/op
+Iteration   3: 27791.518 ms/op
+Iteration   4: 27459.632 ms/op
+Iteration   5: 27263.962 ms/op
+
+# Run progress: 89.09% complete, ETA 00:14:49
+# Fork: 5 of 5
+# Warmup Iteration   1: 27245.157 ms/op
+# Warmup Iteration   2: 27099.383 ms/op
+# Warmup Iteration   3: 27043.463 ms/op
+# Warmup Iteration   4: 26944.143 ms/op
+# Warmup Iteration   5: 27185.798 ms/op
+Iteration   1: 27204.744 ms/op
+Iteration   2: 26961.133 ms/op
+Iteration   3: 26975.095 ms/op
+Iteration   4: 26976.901 ms/op
+Iteration   5: 27095.789 ms/op
+
+
+Result "perf.NonPrimitive.sequence":
+  27257.399 ±(99.9%) 342.686 ms/op [Average]
+  (min, avg, max) = (26944.107, 27257.399, 29219.908), stdev = 457.476
+  CI (99.9%): [26914.713, 27600.086] (assumes normal distribution)
+
+
+# JMH version: 1.23
+# VM version: JDK 15-ea, OpenJDK 64-Bit Server VM, 15-ea+17-717
+# VM invoker: /usr/lib/jvm/java-15-openjdk/bin/java
+# VM options: <none>
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: perf.NonPrimitive.stream
+
+# Run progress: 90.91% complete, ETA 00:12:33
+# Fork: 1 of 5
+# Warmup Iteration   1: 37907.647 ms/op
+# Warmup Iteration   2: 44312.088 ms/op
+# Warmup Iteration   3: 44351.894 ms/op
+# Warmup Iteration   4: 45600.829 ms/op
+# Warmup Iteration   5: 44292.840 ms/op
+Iteration   1: 48919.294 ms/op
+Iteration   2: 50229.844 ms/op
+Iteration   3: 46366.206 ms/op
+Iteration   4: 46053.252 ms/op
+Iteration   5: 44309.572 ms/op
+
+# Run progress: 92.73% complete, ETA 00:10:26
+# Fork: 2 of 5
+# Warmup Iteration   1: 36888.253 ms/op
+# Warmup Iteration   2: 44609.411 ms/op
+# Warmup Iteration   3: 43528.954 ms/op
+# Warmup Iteration   4: 44225.429 ms/op
+# Warmup Iteration   5: 43411.202 ms/op
+Iteration   1: 43504.814 ms/op
+Iteration   2: 43979.944 ms/op
+Iteration   3: 43733.566 ms/op
+Iteration   4: 43561.106 ms/op
+Iteration   5: 44148.817 ms/op
+
+# Run progress: 94.55% complete, ETA 00:08:05
+# Fork: 3 of 5
+# Warmup Iteration   1: 44621.184 ms/op
+# Warmup Iteration   2: 43440.425 ms/op
+# Warmup Iteration   3: 43381.843 ms/op
+# Warmup Iteration   4: 43383.749 ms/op
+# Warmup Iteration   5: 43329.551 ms/op
+Iteration   1: 43357.752 ms/op
+Iteration   2: 43427.313 ms/op
+Iteration   3: 43366.149 ms/op
+Iteration   4: 44638.673 ms/op
+Iteration   5: 43953.000 ms/op
+
+# Run progress: 96.36% complete, ETA 00:05:34
+# Fork: 4 of 5
+# Warmup Iteration   1: 37357.182 ms/op
+# Warmup Iteration   2: 43539.552 ms/op
+# Warmup Iteration   3: 43484.783 ms/op
+# Warmup Iteration   4: 44086.420 ms/op
+# Warmup Iteration   5: 43492.440 ms/op
+Iteration   1: 47195.842 ms/op
+Iteration   2: 43471.970 ms/op
+Iteration   3: 43533.048 ms/op
+Iteration   4: 44247.170 ms/op
+Iteration   5: 43474.395 ms/op
+
+# Run progress: 98.18% complete, ETA 00:02:52
+# Fork: 5 of 5
+# Warmup Iteration   1: 46786.069 ms/op
+# Warmup Iteration   2: 44113.438 ms/op
+# Warmup Iteration   3: 44319.157 ms/op
+# Warmup Iteration   4: 44343.082 ms/op
+# Warmup Iteration   5: 44142.656 ms/op
+Iteration   1: 44516.563 ms/op
+Iteration   2: 44090.180 ms/op
+Iteration   3: 44287.859 ms/op
+Iteration   4: 44238.998 ms/op
+Iteration   5: 44227.628 ms/op
+
+
+Result "perf.NonPrimitive.stream":
+  44673.318 ±(99.9%) 1325.832 ms/op [Average]
+  (min, avg, max) = (43357.752, 44673.318, 50229.844), stdev = 1769.948
+  CI (99.9%): [43347.486, 45999.150] (assumes normal distribution)
+
+
+# Run complete. Total time: 02:42:16
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                       Mode  Cnt      Score      Error  Units
+Java.loop                       avgt   25    446.055 ±    0.677  ms/op
+Java.stream                     avgt   25    601.424 ±   12.606  ms/op
+Kotlin.loop                     avgt   25    446.600 ±    1.164  ms/op
+Kotlin.sequence                 avgt   25   2732.604 ±    6.644  ms/op
+Kotlin.stream                   avgt   25    593.353 ±    1.408  ms/op
+Kotlin.streamWrappedInSequence  avgt   25   3829.209 ±   33.569  ms/op
+Kotlin.withGenerator            avgt   25   8374.149 ±  880.647  ms/op
+NonPrimitive.loop               avgt   25    445.992 ±    0.642  ms/op
+NonPrimitive.parallelStream     avgt   25  33856.919 ±  249.911  ms/op
+NonPrimitive.sequence           avgt   25  27257.399 ±  342.686  ms/op
+NonPrimitive.stream             avgt   25  44673.318 ± 1325.832  ms/op
