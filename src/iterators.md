@@ -307,7 +307,7 @@ fun loop(): Long {
 
 The results here paint a different picture:
 
-```
+```plaintext
 NonPrimitive.loop               avgt   25    445.992 ±    0.642  ms/op
 NonPrimitive.sequence           avgt   25  27257.399 ±  342.686  ms/op
 NonPrimitive.stream             avgt   25  44673.318 ± 1325.832  ms/op
