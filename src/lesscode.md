@@ -38,8 +38,9 @@ But why not take that one step further?
 Don’t just not repeat yourself; don’t repeat someone else either.
 If someone has already written software that converts markdown to html,
   you don’t have to do it again.
-That part might have been obvious, but we can apply it to almost everything that is necessary for this little project
-  (within reason, otherwise we wouldn’t write any code at all).
+That part might have been obvious, but we can apply it to almost everything that is necessary for this little project.[^npmsucks]
+
+[^npmsucks]: within reason, otherwise we wouldn’t write any code at all or do something ridiculous like depend on an external library to [left-pad a string](https://www.davidhaney.io/npm-left-pad-have-we-forgotten-how-to-program/)
 
 ## The components
 So what does my blog need to do?
