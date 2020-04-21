@@ -164,7 +164,9 @@ fun withGenerator() =
         .sum()
 ```
 
-with `const val upper = 1_000_000_000L`.[^`1 until upper` is used in these examples because unlike `lower..upper`, `until` is end-inclusive like Java’s LongStream.range().]
+with `const val upper = 1_000_000_000L`.[^offbyone]
+
+[^offbyone]: `1 until upper` is used in these examples because unlike `lower..upper`, `until` is end-inclusive like Java’s LongStream.range().
 
 Without wasting any more of your time, here are the results:
 
