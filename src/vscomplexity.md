@@ -1,15 +1,16 @@
 # Complexity killed the cat
 
-Note: this is quite specific to video encoding.
-Please don’t read this and then scream “kageru doesn’t want people to write idiomatic code”.
-Thank you.
+Note: this is quite specific to video encoding.  
+Please don’t read this and then scream “kageru doesn’t want people to write idiomatic code”.  
+Thank you.  
 
 ---
 
 Complexity is a known problem.
+
 Lots of people have written about it at length,
   and almost everyone seems to agree that complexity is something to avoid when writing software.
-Still, it seems to appear wherever we go.
+Still, it seems to appear wherever we go.  
 What is it that makes it so tempting and so hard to control?
 
 I recently realized that even video encoding (that is, filtering and encoding like many fansubbers do) is no longer safe.
